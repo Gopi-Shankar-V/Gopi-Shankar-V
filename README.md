@@ -19,3 +19,18 @@
     src="https://raw.githubusercontent.com/Gopi-Shankar-V/Gopi-Shankar-V/output/github-snake.svg" />
 </picture>
 </div>
+<div align="center">
+
+<a href="https://linkedin.com/in/gopi-shankar-v">
+  <img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" />
+</a>
+&nbsp;&nbsp;
+<a href="mailto:gs.gopishankar.v@gmail.com">
+  <img src="https://img.shields.io/badge/Email-0A101F?style=for-the-badge&logo=gmail&logoColor=10B981&labelColor=0A101F" alt="Email" />
+</a>
+&nbsp;&nbsp;
+<a href="https://gopishankar.vercel.app">
+  <img src="https://img.shields.io/badge/Portfolio-0A101F?style=for-the-badge&logo=vercel&logoColor=22D3EE&labelColor=0A101F" alt="Portfolio" />
+</a>
+
+</div>
