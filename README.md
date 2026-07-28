@@ -1,3 +1,11 @@
+<picture>
+<source media="(prefers-color-scheme: dark)"
+srcset="https://github.com/Gopi-Shankar-V/Gopi-Shankar-V/blob/main/banner.svg">
+<source media="(prefers-color-scheme: light)"
+srcset="https://github.com/Gopi-Shankar-V/Gopi-Shankar-V/blob/main/banner.svg">
+<img alt="GOPI SHANKAR V" src="https://github.com/Gopi-Shankar-V/Gopi-Shankar-V/blob/main/banner.svg">
+</picture>
+
 <div align="center">
 
 <img width="100%" src="https://streak-stats.demolab.com/?user=Gopi-Shankar-V&hide_border=true&background=0A101F&stroke=22D3EE&ring=A78BFA&fire=10B981&currStreakLabel=22D3EE&sideLabels=94A3B8&currStreakNum=F8FAFC&sideNums=F8FAFC&dates=64748B&titleColor=22D3EE&card_width=1180" alt="streak" />
