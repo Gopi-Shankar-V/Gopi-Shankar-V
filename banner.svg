@@ -1,0 +1,269 @@
+<svg width="1200" height="300" viewBox="0 0 1200 300" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=K2D:wght@300;400;500;600;700;800&amp;display=swap');
+      .k2d { font-family: 'K2D', 'Segoe UI', sans-serif; }
+      .glow-text { filter: drop-shadow(0 0 6px rgba(104,186,127,0.55)); }
+    </style>
+
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0A0A0A"/>
+      <stop offset="50%" stop-color="#0f120f"/>
+      <stop offset="100%" stop-color="#0A0A0A"/>
+    </linearGradient>
+
+    <linearGradient id="nameGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#2E6F40"/>
+      <stop offset="100%" stop-color="#68BA7F"/>
+    </linearGradient>
+
+    <radialGradient id="orbTL" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#2E6F40" stop-opacity="0.22"/>
+      <stop offset="100%" stop-color="#2E6F40" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="orbBR" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#68BA7F" stop-opacity="0.16"/>
+      <stop offset="100%" stop-color="#68BA7F" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="socketGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#68BA7F" stop-opacity="0.20"/>
+      <stop offset="100%" stop-color="#68BA7F" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- chip body: brushed metallic-ceramic gradient -->
+    <linearGradient id="chipBody" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#173620"/>
+      <stop offset="55%" stop-color="#0e1f13"/>
+      <stop offset="100%" stop-color="#08130b"/>
+    </linearGradient>
+    <linearGradient id="chipSheen" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#68BA7F" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#68BA7F" stop-opacity="0"/>
+    </linearGradient>
+
+    <!-- tux body/belly shading -->
+    <linearGradient id="tuxBody" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3d8a53"/>
+      <stop offset="55%" stop-color="#2E6F40"/>
+      <stop offset="100%" stop-color="#1c4a29"/>
+    </linearGradient>
+    <linearGradient id="tuxBelly" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#EAFBEF"/>
+      <stop offset="100%" stop-color="#CFFFDC"/>
+    </linearGradient>
+    <linearGradient id="tuxHead" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3d8a53"/>
+      <stop offset="100%" stop-color="#245736"/>
+    </linearGradient>
+
+    <clipPath id="typeClip">
+      <rect x="0" y="0" width="0" height="30">
+        <animate attributeName="width" values="0;620;620;0;0" keyTimes="0;0.28;0.85;0.92;1" dur="11s" repeatCount="indefinite"/>
+      </rect>
+    </clipPath>
+
+    <!-- continuous flowing UART bit-stream: square wave + riding 0/1 digits, tileable -->
+    <pattern id="uartWave" width="96" height="30" patternUnits="userSpaceOnUse">
+      <path d="M0,18 L0,8 L24,8 L24,18 L48,18 L48,8 L72,8 L72,18 L96,18"
+            fill="none" stroke="#2E6F40" stroke-width="1.6" stroke-linejoin="round"/>
+      <circle cx="12" cy="8" r="1.4" fill="#68BA7F"/>
+      <circle cx="60" cy="8" r="1.4" fill="#68BA7F"/>
+      <text x="8"  y="28" class="k2d" font-size="9" fill="#3f6b4a">1</text>
+      <text x="32" y="28" class="k2d" font-size="9" fill="#2c4a34">0</text>
+      <text x="56" y="28" class="k2d" font-size="9" fill="#3f6b4a">1</text>
+      <text x="80" y="28" class="k2d" font-size="9" fill="#2c4a34">0</text>
+      <animateTransform attributeName="patternTransform" type="translate" from="0 0" to="-96 0" dur="4s" repeatCount="indefinite"/>
+    </pattern>
+  </defs>
+
+  <!-- background -->
+  <rect width="1200" height="300" fill="url(#bgGrad)"/>
+
+  <!-- ambient glow orbs -->
+  <g>
+    <circle cx="220" cy="60" r="220" fill="url(#orbTL)">
+      <animateTransform attributeName="transform" type="translate" values="0 0; 8 -6; 0 0" dur="10s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="980" cy="240" r="260" fill="url(#orbBR)">
+      <animateTransform attributeName="transform" type="translate" values="0 0; -8 6; 0 0" dur="12s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+
+  <!-- faint dot grid -->
+  <g opacity="0.10">
+    <pattern id="dots" width="26" height="26" patternUnits="userSpaceOnUse">
+      <circle cx="1" cy="1" r="1" fill="#68BA7F"/>
+    </pattern>
+    <rect width="1200" height="300" fill="url(#dots)"/>
+  </g>
+
+  <!-- glass frame -->
+  <rect x="6" y="6" width="1188" height="288" rx="16" fill="none" stroke="#2E6F40" stroke-opacity="0.55" stroke-width="1.5" stroke-dasharray="2 6"/>
+  <rect x="6" y="6" width="1188" height="288" rx="16" fill="none" stroke="#68BA7F" stroke-opacity="0.25" stroke-width="4" filter="blur(6px)"/>
+
+  <!-- ============ LEFT: SOCKET / MORPHING ICON STAGE ============ -->
+  <g transform="translate(190,142)">
+    <circle r="96" fill="url(#socketGlow)"/>
+    <circle r="80" fill="none" stroke="#2E6F40" stroke-opacity="0.5" stroke-width="1" stroke-dasharray="3 7">
+      <animateTransform attributeName="transform" type="rotate" from="0 0 0" to="360 0 0" dur="40s" repeatCount="indefinite"/>
+    </circle>
+    <circle r="66" fill="none" stroke="#68BA7F" stroke-opacity="0.35" stroke-width="1" stroke-dasharray="1 5">
+      <animateTransform attributeName="transform" type="rotate" from="360 0 0" to="0 0 0" dur="55s" repeatCount="indefinite"/>
+    </circle>
+
+    <!-- ICON 1: Embedded-C microcontroller -->
+    <g>
+      <animate attributeName="opacity" dur="9s" repeatCount="indefinite" begin="0s"
+        keyTimes="0;0.04;0.28;0.34;1" values="0;1;1;0;0"/>
+
+      <!-- pins with solder-tip highlights -->
+      <g stroke="#2E6F40" stroke-width="2.4" stroke-linecap="round">
+        <line x1="-26" y1="-15" x2="-38" y2="-15"/>
+        <line x1="-26" y1="0"   x2="-38" y2="0"/>
+        <line x1="-26" y1="15"  x2="-38" y2="15"/>
+        <line x1="26"  y1="-15" x2="38"  y2="-15"/>
+        <line x1="26"  y1="0"   x2="38"  y2="0"/>
+        <line x1="26"  y1="15"  x2="38"  y2="15"/>
+        <line x1="-15" y1="-26" x2="-15" y2="-38"/>
+        <line x1="0"   y1="-26" x2="0"   y2="-38"/>
+        <line x1="15"  y1="-26" x2="15"  y2="-38"/>
+        <line x1="-15" y1="26"  x2="-15" y2="38"/>
+        <line x1="0"   y1="26"  x2="0"   y2="38"/>
+        <line x1="15"  y1="26"  x2="15"  y2="38"/>
+      </g>
+      <g fill="#68BA7F">
+        <circle cx="-38" cy="-15" r="1.6"/><circle cx="-38" cy="0" r="1.6"/><circle cx="-38" cy="15" r="1.6"/>
+        <circle cx="38" cy="-15" r="1.6"/><circle cx="38" cy="0" r="1.6"/><circle cx="38" cy="15" r="1.6"/>
+        <circle cx="-15" cy="-38" r="1.6"/><circle cx="0" cy="-38" r="1.6"/><circle cx="15" cy="-38" r="1.6"/>
+        <circle cx="-15" cy="38" r="1.6"/><circle cx="0" cy="38" r="1.6"/><circle cx="15" cy="38" r="1.6"/>
+      </g>
+
+      <!-- ceramic body -->
+      <rect x="-26" y="-26" width="52" height="52" rx="7" fill="url(#chipBody)" stroke="#68BA7F" stroke-width="1.4"/>
+      <rect x="-26" y="-26" width="52" height="26" rx="7" fill="url(#chipSheen)"/>
+      <!-- pin-1 notch -->
+      <circle cx="-19" cy="-19" r="2.2" fill="#0A0A0A" stroke="#CFFFDC" stroke-width="1"/>
+
+      <!-- silicon die traces -->
+      <g stroke="#3f6b4a" stroke-width="1" fill="none" opacity="0.85">
+        <rect x="-15" y="-15" width="30" height="30" rx="2"/>
+        <path d="M -15,-6 H -8 M -15,3 H -5 M -15,11 H -9"/>
+        <path d="M 15,-6 H 8 M 15,3 H 5 M 15,11 H 9"/>
+      </g>
+      <text x="0" y="4" text-anchor="middle" class="k2d" font-size="11" font-weight="700" fill="#CFFFDC">C</text>
+    </g>
+
+    <!-- ICON 2: CAN bus -->
+    <g>
+      <animate attributeName="opacity" dur="9s" repeatCount="indefinite" begin="-3s"
+        keyTimes="0;0.04;0.28;0.34;1" values="0;1;1;0;0"/>
+
+      <!-- terminator resistors at bus ends -->
+      <g stroke="#68BA7F" stroke-width="1.6" fill="none" stroke-linecap="round">
+        <path d="M -38,-4 l 3,-5 l 4,10 l 4,-10 l 4,10 l 4,-10 l 3,5" transform="translate(-2,0) scale(0.6)"/>
+      </g>
+
+      <!-- twisted pair, gradient depth -->
+      <g fill="none" stroke-linecap="round">
+        <path d="M -34,-5 Q -17,-11 0,-5 Q 17,1 34,-5" stroke="#3d8a53" stroke-width="2.4"/>
+        <path d="M -34,5  Q -17,-1 0,5  Q 17,11 34,5"  stroke="#245736" stroke-width="2.4"/>
+      </g>
+
+      <!-- ECU nodes as tiny chips -->
+      <g>
+        <g transform="translate(-22,-30)">
+          <rect x="-6" y="-6" width="12" height="12" rx="2" fill="url(#chipBody)" stroke="#68BA7F" stroke-width="1"/>
+          <line x1="0" y1="6" x2="0" y2="24" stroke="#2E6F40" stroke-width="1.4"/>
+        </g>
+        <g transform="translate(0,-34)">
+          <rect x="-6" y="-6" width="12" height="12" rx="2" fill="url(#chipBody)" stroke="#68BA7F" stroke-width="1"/>
+          <line x1="0" y1="6" x2="0" y2="28" stroke="#2E6F40" stroke-width="1.4"/>
+        </g>
+        <g transform="translate(22,-30)">
+          <rect x="-6" y="-6" width="12" height="12" rx="2" fill="url(#chipBody)" stroke="#68BA7F" stroke-width="1"/>
+          <line x1="0" y1="6" x2="0" y2="24" stroke="#2E6F40" stroke-width="1.4"/>
+        </g>
+      </g>
+      <g fill="#CFFFDC">
+        <circle cx="-22" cy="-30" r="2.4"/>
+        <circle cx="0"   cy="-34" r="2.4"/>
+        <circle cx="22"  cy="-30" r="2.4"/>
+      </g>
+    </g>
+
+    <!-- ICON 3: Tux (Linux), detailed -->
+    <g>
+      <animate attributeName="opacity" dur="9s" repeatCount="indefinite" begin="-6s"
+        keyTimes="0;0.04;0.28;0.34;1" values="0;1;1;0;0"/>
+
+      <!-- feet -->
+      <ellipse cx="-12" cy="34" rx="8" ry="3.6" fill="#CFFFDC"/>
+      <ellipse cx="12"  cy="34" rx="8" ry="3.6" fill="#CFFFDC"/>
+      <g stroke="#8fd6a3" stroke-width="0.8">
+        <line x1="-16" y1="34" x2="-16" y2="31"/><line x1="-12" y1="35" x2="-12" y2="32"/><line x1="-8" y1="34" x2="-8" y2="31"/>
+        <line x1="8" y1="34" x2="8" y2="31"/><line x1="12" y1="35" x2="12" y2="32"/><line x1="16" y1="34" x2="16" y2="31"/>
+      </g>
+
+      <!-- flippers -->
+      <ellipse cx="-23" cy="6" rx="6" ry="16" fill="#1c4a29" transform="rotate(-18 -23 6)"/>
+      <ellipse cx="23"  cy="6" rx="6" ry="16" fill="#1c4a29" transform="rotate(18 23 6)"/>
+
+      <!-- body -->
+      <ellipse cx="0" cy="8" rx="22" ry="30" fill="url(#tuxBody)" stroke="#123320" stroke-width="1"/>
+      <!-- belly -->
+      <ellipse cx="0" cy="13" rx="12.5" ry="21" fill="url(#tuxBelly)"/>
+
+      <!-- head -->
+      <circle cx="0" cy="-21" r="15.5" fill="url(#tuxHead)" stroke="#123320" stroke-width="1"/>
+      <!-- face patch -->
+      <ellipse cx="0" cy="-16" rx="9" ry="7" fill="#EAFBEF"/>
+
+      <!-- eyes with highlight -->
+      <circle cx="-5.5" cy="-21" r="3" fill="#0A0A0A"/>
+      <circle cx="4.5"  cy="-21" r="3" fill="#0A0A0A"/>
+      <circle cx="-6.4" cy="-22" r="1" fill="#ffffff"/>
+      <circle cx="3.6"  cy="-22" r="1" fill="#ffffff"/>
+
+      <!-- beak -->
+      <path d="M -3.5,-15 L 3.5,-15 L 0,-9 Z" fill="#CFFFDC" stroke="#8fd6a3" stroke-width="0.6"/>
+    </g>
+  </g>
+
+  <!-- vertical dashed data-flow divider -->
+  <line x1="352" y1="40" x2="352" y2="254" stroke="#2E6F40" stroke-opacity="0.45" stroke-width="1" stroke-dasharray="2 6"/>
+  <circle r="3.4" fill="#68BA7F" class="glow-text">
+    <animateMotion path="M 352,40 L 352,254" dur="2.6s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.1;0.85;1" dur="2.6s" repeatCount="indefinite"/>
+  </circle>
+
+  <!-- ============ RIGHT: IDENTITY BLOCK ============ -->
+  <g transform="translate(400,0)">
+    <text x="0" y="104" class="k2d" font-size="42" font-weight="800" fill="url(#nameGrad)" letter-spacing="1">GOPI SHANKAR V</text>
+
+    <text x="2" y="136" class="k2d" font-size="18" font-weight="500" fill="#68BA7F" letter-spacing="0.4">Embedded Systems Engineer &#8212; Bare-Metal Firmware Developer</text>
+
+    <line x1="2" y1="152" x2="700" y2="152" stroke="#2E6F40" stroke-opacity="0.45" stroke-width="1"/>
+
+    <!-- terminal status line, typed -->
+    <text x="2" y="182" class="k2d" font-size="15" font-weight="400" fill="#5a5f5c">
+      <tspan fill="#CFFFDC">$</tspan> whoami
+    </text>
+    <g clip-path="url(#typeClip)">
+      <text x="2" y="206" class="k2d" font-size="15.5" font-weight="400" fill="#EDEDED">
+        Training @ Vector India &#183; Building &#183; Learning &#183; Shipping
+      </text>
+    </g>
+    <rect x="2" y="193" width="9" height="16" fill="#CFFFDC" class="glow-text">
+      <animate attributeName="x" values="2;624" dur="11s" keyTimes="0;0.28" repeatCount="indefinite" fill="freeze" calcMode="linear"/>
+      <animate attributeName="opacity" values="1;0;1" dur="0.9s" repeatCount="indefinite"/>
+    </rect>
+
+    <text x="2" y="236" class="k2d" font-size="13" font-weight="300" fill="#8a8f8c" letter-spacing="0.3">Dindigul, Tamil Nadu, India &#8226; B.E. Electrical &amp; Electronics Engineering</text>
+
+    <text x="2" y="256" class="k2d" font-size="11.5" font-weight="500" fill="#68BA7F" letter-spacing="0.5">UART &#183; SPI &#183; I2C &#183; CAN &#183; ARM7 &#183; ATmega328P &#183; 8051 &#183; RTX</text>
+  </g>
+
+  <!-- continuous flowing binary UART data-stream ribbon along the bottom edge -->
+  <rect x="0" y="270" width="1200" height="30" fill="url(#uartWave)"/>
+  <rect x="0" y="270" width="1200" height="30" fill="url(#bgGrad)" opacity="0.15"/>
+</svg>
